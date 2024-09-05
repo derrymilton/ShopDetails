@@ -11,12 +11,12 @@ const HomeCards = ({routesData}) => {
 
 
   return (
-    <section className="py-4">
+    <section className="py-4 bg-black">
       <div className="container-l lg:container m-auto ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-lg">
-          <Card>
+          <Card bg="bg-indigo-100">
             <h2 className="text-2xl font-bold">
-              Total Jobs
+              Total Shops
               <span className=" inline-flex float-end bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700">
                 {totalCount}
               </span>
@@ -29,7 +29,7 @@ const HomeCards = ({routesData}) => {
           </Card>
           <Card bg="bg-indigo-100">
             <h2 className="text-2xl font-bold">
-              Currently Open
+              Completed
               <span className=" inline-flex float-end bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700">
                 {completedCount}
               </span>
@@ -37,7 +37,7 @@ const HomeCards = ({routesData}) => {
           </Card>
           <Card bg="bg-indigo-100">
             <h2 className="text-2xl font-bold">
-              Closed
+              Pending
               <span className=" inline-flex float-end bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700">
                 {pendingCount}
               </span>

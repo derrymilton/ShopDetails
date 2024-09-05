@@ -7,6 +7,9 @@ import { toast } from "react-toastify";
 const JobPage = ({ deleteJob }) => {
   const { id } = useParams();
   const job = useLoaderData();
+  if (!job) {
+    return <div>Job not found</div>;
+  }
 
   const navigate = useNavigate();
   const onDeleteClick = (jobId) => {
@@ -37,7 +40,7 @@ const JobPage = ({ deleteJob }) => {
           <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
             <main>
               <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-                <h1 className="text-3xl font-bold mb-4">{job.name}</h1>
+                <h1 className="text-3xl font-bold mb-4">{job.shopName}</h1>
                 <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
                   <FaMapMarker className="text-lg text-orange-700 mr-2" />
                   <p className="text-orange-700">{job.location}</p>
@@ -46,22 +49,29 @@ const JobPage = ({ deleteJob }) => {
 
               {/* <!-- Company Info --> */}
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                <h3 className="text-xl font-bold mb-6">Company Info</h3>
-
-                <h2 className="text-2xl">{job.shopName}</h2>
+                <h3 className="text-xl font-bold mb-6">Shop Info</h3>
+                <h3 className="text-m">Name:</h3>
+                <p className="my-2 bg-indigo-100 p-2 font-bold">
+                  {job.name}
+                  </p>
 
                 <hr className="my-4" />
 
-                <h3 className="text-xl">Contact Phone:</h3>
+                <h3 className="text-m">Contact Phone:</h3>
 
                 <p className="my-2 bg-indigo-100 p-2 font-bold">
                   {job.contactPhone}
                 </p>
 
-                <h3 className="text-xl">Address:</h3>
+                <h3 className="text-m">Address:</h3>
 
                 <p className="my-2 bg-indigo-100 p-2 font-bold">
                   {job.shopAddress}
+                </p>
+                <h3 className="text-m">Route No:</h3>
+
+                <p className="my-2 bg-indigo-100 p-2 font-bold">
+                  {job.routeNo}
                 </p>
               </div>
             </main>
@@ -76,6 +86,7 @@ const JobPage = ({ deleteJob }) => {
                 <p className="mb-4">
                   {job.completionStatus ? "success" : "not done"}
                 </p>
+                
               </div>
               {/* <!-- Manage --> */}
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
@@ -104,9 +115,20 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`http://localhost:8000/api/jobs/${params.id}`); 
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+    const data = await res.json();
+    return data; // Return the job data
+  } catch (error) {
+    console.error('Error fetching job:', error);
+    return null; // Handle errors and return null or appropriate value
+  }
 };
+
+
+;
 
 export { JobPage as default, jobLoader };

@@ -18,13 +18,13 @@ const FilterRoutes = () => {
      navigate("/jobs", { state: { filteredValues } });
   };
   return (
-    <>
-      <h1 className="flex justify-center items-center">
+    <div className='bg-black'>
+      <h1 className="flex justify-center items-center text-slate-200 text-xl py-4">
         Fill the below details to start your Day
       </h1>
 
-      <section className=" flex justify-center items-center rounded-md">
-        <div className="bg-indigo-500 p-5">
+      <section className=" flex justify-center items-center rounded-md py-4">
+        <div className="bg-indigo-500 p-5 mb-4 ">
           <form>
             <div className="mb-4">
               <label
@@ -34,7 +34,7 @@ const FilterRoutes = () => {
                 Route No :
               </label>
               <input
-                type="text"
+                type="number"
                 name='routeNo'
                 placeholder="Enter Route Number"
                 className="border rounded w-full py-2 px-3 mb-2"
@@ -70,7 +70,7 @@ const FilterRoutes = () => {
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

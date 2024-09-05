@@ -39,9 +39,9 @@ const EditJobPage = ({ updateJobSubmit }) => {
     return navigate(`/jobs/${id}`);
   };
   return (
-    <section className="bg-indigo-50">
+    <section className="bg-black">
       <div className="container m-auto max-w-2xl py-24">
-        <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+        <div className="bg-blue-200 px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
           <form onSubmit={submitForm}>
             <h2 className="text-3xl text-center font-semibold mb-6">
               Update Details
@@ -65,7 +65,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 Route No
               </label>
               <input
-                type="text"
+                type="number"
                 id="routeNo"
                 name="routeNo"
                 className="border rounded w-full py-2 px-3 mb-2"
@@ -149,7 +149,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 Contact Phone
               </label>
               <input
-                type="tel"
+                type="number"
                 id="contact_phone"
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"

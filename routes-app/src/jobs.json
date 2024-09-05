@@ -67,37 +67,15 @@
       "completionStatus": false
     },
     {
-      "id": "4c6f",
-      "name": "Derry",
-      "routeNo": "2",
-      "location": "Tambaram",
-      "completionStatus": false,
-      "shopName": "Kings Shop",
-      "shopAddress": "11a,eden Garden apartments,tambaram",
-      "contactPhone": "7436872",
-      "day": "Monday"
-    },
-    {
-      "id": "bd20",
-      "name": "Derry",
-      "routeNo": "2",
-      "location": "Tambaram",
-      "completionStatus": false,
-      "shopName": "Kings Shop",
-      "shopAddress": "11a,eden Garden apartments,tambaram",
-      "contactPhone": "7436872",
-      "day": "monday"
-    },
-    {
-      "id": "3271",
-      "name": "shelton",
-      "routeNo": "3",
-      "location": "chennai",
+      "id": "e47a",
+      "name": "derry",
+      "routeNo": "-1",
+      "location": "jbui",
       "completionStatus": true,
-      "shopName": "Kings Shop",
-      "shopAddress": "4/12,West street, Tambaram",
-      "contactPhone": "7436872",
-      "day": "monday"
+      "shopName": "hgkuygkh",
+      "shopAddress": "kjhl7yujn",
+      "contactPhone": "43765",
+      "day": "mon"
     }
   ]
 }

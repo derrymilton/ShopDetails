@@ -11,12 +11,12 @@ const JobListing = ({ job }) => {
   return (
     <div
       className={`rounded-xl shadow-md relative ${
-        job.completionStatus ? "bg-white" : "bg-red-100"
+        job.completionStatus ? "bg-blue-100" : "bg-red-100"
       }`}
     >
       <div className="p-4">
         <div className="mb-6">
-          <h3 className="text-xl font-bold">{job.name}</h3>
+          <h3 className="text-xl font-bold">{job.shopName}</h3>
 
           <Link
             to={`/jobs/${job.id}`}

@@ -20,22 +20,22 @@ const App = () => {
     const res = await fetch("/api/jobs");
     const data = await res.json();
     return setRoutesData(data);
-    console.log(routesData);
     }
     fetchData();
 
-  },[routesData])
+  },[])
 
   //Add new Job
   const addJob = async (newJob) => {
-    const res = await fetch("/api/jobs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newJob),
-    });
-    return;
+      const res = await fetch('/api/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newJob),
+      });
+  
+     return;
   };
   //Delete Job
   const deleteJob = async (id) => {
